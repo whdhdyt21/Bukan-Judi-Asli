@@ -14,7 +14,7 @@ export default {
           <path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5L12 3l9 7.5M5 21h14a1 1 0 001-1V10.5" />
         </svg>
       </button>
-      <a class="font-semibold text-2xl" href="/Wahid98Gacor/">Wahid 98 GACOR</a>
+      <a class="font-semibold text-2xl" href="/wahid98gacor/">Wahid 98 GACOR</a>
     </div>
     <div
       id="pointCounter"

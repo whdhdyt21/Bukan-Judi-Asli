@@ -23,9 +23,9 @@ function changePoints(delta) {
 
 // Games listing (kept in English as requested)
 const games = [
-  new Game("Slots", "/Wahid98Gacor/slots.jpg", "Putar slot dan menangkan hadiah!"),
-  new Game("Roulette", "/Wahid98Gacor/roulette.jpg", "Putar roda dan menangkan!"),
-  new Game("Blackjack", "/Wahid98Gacor/blackjack.jpg", "Kalahkan bandar dan menangkan!"),
+  new Game("Slots", "/wahid98gacor/slots.jpg", "Putar slot dan menangkan hadiah!"),
+  new Game("Roulette", "/wahid98gacor/roulette.jpg", "Putar roda dan menangkan!"),
+  new Game("Blackjack", "/wahid98gacor/blackjack.jpg", "Kalahkan bandar dan menangkan!"),
 ];
 </script>
 
