@@ -22,10 +22,15 @@ function changePoints(delta) {
 }
 
 // Games listing (kept in English as requested)
+const base = import.meta.env.BASE_URL || "/";
 const games = [
-  new Game("Slots", "/wahid98gacor/slots.jpg", "Putar slot dan menangkan hadiah!"),
-  new Game("Roulette", "/wahid98gacor/roulette.jpg", "Putar roda dan menangkan!"),
-  new Game("Blackjack", "/wahid98gacor/blackjack.jpg", "Kalahkan bandar dan menangkan!"),
+  new Game("Slots", base + "slots.jpg", "Putar slot dan menangkan hadiah!"),
+  new Game("Roulette", base + "roulette.jpg", "Putar roda dan menangkan!"),
+  new Game(
+    "Blackjack",
+    base + "blackjack.jpg",
+    "Kalahkan bandar dan menangkan!"
+  ),
 ];
 </script>
 
