@@ -11,8 +11,13 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  // Ensure Vite uses the repository root and public directory explicitly.
-  // This helps CI/CD platforms (like Vercel) that may change the working directory.
-  root: fileURLToPath(new URL("./", import.meta.url)),
+  // Explicitly set the build input to the repository's `index.html` so
+  // CI/CD platforms (like Vercel) can resolve the entry even if the
+  // working directory changes during the build process.
+  build: {
+    rollupOptions: {
+      input: fileURLToPath(new URL("./index.html", import.meta.url)),
+    },
+  },
   publicDir: "public",
 });
