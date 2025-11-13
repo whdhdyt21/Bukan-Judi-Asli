@@ -8,7 +8,10 @@ export default {
   },
   methods: {
     changeValue() {
-      this.value = this.$refs.betValue.value;
+      const v = this.$refs.betValue.value;
+      this.value = v;
+      // emit raw value (string) so parent decides how to parse (numeric or text)
+      this.$emit("change", v);
     },
   },
 };

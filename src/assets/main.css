@@ -53,3 +53,75 @@ button,
 select {
   outline: none;
 }
+
+/* --- Casino / UI utility classes --- */
+
+/* subtle glow for highlights (use on buttons, badges) */
+.glow {
+  box-shadow: 0 6px 18px rgba(250, 204, 21, 0.12), 0 2px 6px rgba(250, 204, 21, 0.06);
+}
+
+/* stronger neon accent for headings or focused elements */
+.neon {
+  text-shadow: 0 2px 10px rgba(250, 204, 21, 0.12), 0 0 6px rgba(250, 204, 21, 0.08);
+}
+
+/* glass card look */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* subtle floating/hover lift for cards */
+.card-hover {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(2,6,23,0.55);
+}
+
+/* small badge style */
+.badge-soft {
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+/* entrance animation */
+.fade-in {
+  animation: fadeInUp 420ms ease both;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* utility for lazy image placeholder */
+.img-placeholder {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 50%, rgba(255,255,255,0.02) 100%);
+}
+
+/* simple fade transition used by rules toggle */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
