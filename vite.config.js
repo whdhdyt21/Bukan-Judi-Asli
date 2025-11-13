@@ -11,5 +11,8 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  base: "/wahid98gacor/",
+  // Ensure Vite uses the repository root and public directory explicitly.
+  // This helps CI/CD platforms (like Vercel) that may change the working directory.
+  root: fileURLToPath(new URL("./", import.meta.url)),
+  publicDir: "public",
 });
