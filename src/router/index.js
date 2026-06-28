@@ -24,6 +24,11 @@ const router = createRouter({
       name: "blackjack",
       component: () => import("../views/BlackjackView.vue"),
     },
+    {
+      path: "/edukasi",
+      name: "edukasi",
+      component: () => import("../views/EducationView.vue"),
+    },
   ],
 });
 

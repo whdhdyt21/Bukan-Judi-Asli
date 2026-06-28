@@ -1,39 +1,59 @@
 <script>
 export default {
   props: {
+    // Each element: { title, value (peluang %), payout, note }
     elements: { type: Array, required: true },
-    compact: { type: Boolean, default: true },
   },
 };
 </script>
 
 <template>
-  <div tabindex="0" class="collapse rounded-box w-full">
-    <div class="collapse-title text-xl font-semibold text-center p-3 neon">Peluang & Hadiah</div>
+  <section class="w-full">
+    <header class="flex items-baseline justify-between mb-3">
+      <h3 class="text-lg font-bold text-amber-100 neon">
+        Peluang &amp; Hadiah
+      </h3>
+      <span class="text-[11px] text-slate-400">per putaran</span>
+    </header>
 
-    <div class="collapse-content">
-      <div class="glass p-2 rounded-md shadow max-w-full lg:max-w-md">
-        <!-- constrain height on large layouts to keep the right column proportional -->
-        <div class="max-h-72 lg:max-h-96 overflow-y-auto pr-2">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <div v-for="(element, idx) in elements" :key="idx" class="bg-gradient-to-br from-slate-800/40 to-slate-900/30 p-2 rounded-md min-h-0">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 flex items-center justify-center rounded-md bg-white/5 shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-primary">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <div class="flex-1 min-w-0">
-                  <div class="flex items-baseline justify-between">
-                    <div class="text-xs text-slate-300 truncate">{{ element.title }}</div>
-                    <div class="text-sm font-semibold text-white ml-2">{{ element.value }}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <ul class="space-y-2">
+      <li
+        v-for="(el, idx) in elements"
+        :key="idx"
+        class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10"
+      >
+        <!-- outcome -->
+        <div
+          class="font-black text-amber-200 text-sm shrink-0 text-center tracking-wide min-w-[3rem] max-w-[5rem] leading-tight"
+        >
+          {{ el.title }}
+        </div>
+
+        <!-- reward + meaning -->
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-semibold text-white truncate">
+            {{ el.payout }}
+          </div>
+          <div v-if="el.note" class="text-[11px] text-slate-400 truncate">
+            {{ el.note }}
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+
+        <!-- probability -->
+        <div class="text-right shrink-0">
+          <div class="text-[10px] uppercase tracking-wide text-slate-500">
+            Peluang
+          </div>
+          <div class="font-mono font-semibold text-rose-300">
+            {{ el.value }}
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <p class="mt-2 text-[11px] text-slate-500 leading-snug">
+      Hadiah besar selalu berpasangan dengan peluang yang sangat kecil. Itulah
+      cara rumah menjaga keuntungan.
+    </p>
+  </section>
 </template>

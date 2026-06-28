@@ -1,66 +1,128 @@
-<img align="left" height="64" src="./public/logo2.png">
+<p align="center">
+  <img height="72" src="./public/logo.svg" alt="Logo Sadar Judi">
+</p>
 
-## Motivasi
+<h1 align="center">Sadar Judi</h1>
 
-Proyek ini adalah simulasi edukatif dari antarmuka kasino online. Semua taruhan dan hadiah di sini bersifat palsu — tidak ada uang nyata yang terlibat. Tujuan utama adalah memberikan pengalaman bermain yang intuitif sambil menjelaskan risiko dan mekanika matematis (seperti probabilitas dan ekspektasi) di balik permainan kasino.
+<p align="center">
+  Simulasi edukatif untuk memahami matematika dan risiko di balik perjudian online.
+</p>
+
+<p align="center">
+  <img alt="Vue" src="https://img.shields.io/badge/Vue-3-42b883?logo=vuedotjs&logoColor=white">
+  <img alt="Vite" src="https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white">
+  <img alt="Tailwind" src="https://img.shields.io/badge/Tailwind-3-38BDF8?logo=tailwindcss&logoColor=white">
+  <img alt="Vitest" src="https://img.shields.io/badge/Tested%20with-Vitest-6E9F18?logo=vitest&logoColor=white">
+  <img alt="License" src="https://img.shields.io/badge/License-GPLv3-blue">
+</p>
+
+---
+
+> [!WARNING] > **Ini bukan situs judi.** Tidak ada uang, taruhan, atau hadiah nyata. Semua saldo bersifat simulasi (poin palsu) yang tidak dapat ditarik atau diuangkan. Tujuannya murni edukasi.
+
+## Tentang Proyek
+
+**Sadar Judi** sengaja meniru tampilan kasino/slot online modern untuk satu alasan: menunjukkan **mengapa pemain selalu kalah dalam jangka panjang**. Alih-alih sekadar memberi nasihat "jangan berjudi", proyek ini membiarkan pengguna mencoba sendiri simulasinya, lalu membuka tabir matematika dan trik psikologis yang membuat perjudian selalu menguntungkan bandar.
+
+Bahkan estetika "mewah" situs ini (emas berkilau, tombol berdenyut, running text promo) adalah bagian dari pelajaran: itulah pola nyata yang dipakai situs judi untuk memikat. Di sini pengguna belajar mengenalinya.
 
 ## Fitur Utama
 
-- Simulasi beberapa permainan (Slots, Roulette, Blackjack) dengan UI bertema kasino.
-- Informasi probabilitas dan hadiah ditampilkan secara ringkas untuk tujuan edukasi.
-- Saldo pemain disimpan di `localStorage` sehingga dapat dicoba ulang.
-- Mekanika permainan dapat disesuaikan oleh pengembang (payouts, simbol, dsb.) untuk eksperimen.
+| Fitur                               | Penjelasan                                                                                                 |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 🎰 **3 simulasi permainan**         | Slots, Roulette, dan Blackjack dengan mekanika judi yang nyata.                                            |
+| 📊 **Peluang & Hadiah transparan**  | Setiap permainan menampilkan peluang, hadiah, dan **nilai harapan (EV) negatif** secara langsung.          |
+| 📉 **Pelacak sesi**                 | Total dipertaruhkan vs hasil bersih, sebagai bukti empiris bahwa rumah selalu menang.                      |
+| 🎓 **Halaman Edukasi** (`/edukasi`) | House edge, expected value, gambler's fallacy, simulator "berapa lama saldo bertahan", dan kontak bantuan. |
+| 💾 **Saldo demo**                   | Disimpan di `localStorage`, dapat di-reset kapan saja lewat tombol di navbar.                              |
+| ♿ **Aksesibel & responsif**        | Mendukung layar laptop/desktop dan menghormati `prefers-reduced-motion`.                                   |
 
-## Menjalankan Proyek (Pengembangan)
+## Konsep yang Diajarkan
 
-1. Install dependensi dan siapkan Husky (untuk git hooks):
+- **House Edge:** keunggulan matematis bandar pada tiap permainan (Slots ~8%, Roulette ~25%, Blackjack ~5%).
+- **Expected Value (EV):** rata-rata hasil per taruhan yang selalu negatif pada judi.
+- **Probabilitas:** hadiah besar selalu berpasangan dengan peluang yang sangat kecil.
+- **Jebakan psikologis:** gambler's fallacy, efek near-miss, dan chasing losses.
 
-```powershell
-npm i
+## Teknologi
+
+- [Vue 3](https://vuejs.org/) (Composition & Options API) + [Vue Router](https://router.vuejs.org/)
+- [Vite](https://vitejs.dev/) sebagai build tool
+- [Tailwind CSS](https://tailwindcss.com/) + [daisyUI](https://daisyui.com/) untuk styling
+- [Vitest](https://vitest.dev/) + [Vue Test Utils](https://test-utils.vuejs.org/) untuk pengujian
+- ESLint, Prettier, dan Husky untuk kualitas kode
+
+## Menjalankan Proyek
+
+Butuh **Node.js 20+** (sesuai persyaratan Vite 7).
+
+```bash
+# 1. Install dependensi
+npm install
+
+# 2. Siapkan git hooks (Husky)
 npm run prepare
-```
 
-2. Jalankan mode development:
-
-```powershell
+# 3. Jalankan mode pengembangan
 npm run dev
 ```
 
-3. Buka browser ke alamat yang tertera oleh Vite (biasanya `http://localhost:5173`).
-
-Catatan: jika port sudah dipakai, Vite akan memilih port lain otomatis.
+Buka alamat yang ditampilkan Vite (biasanya `http://localhost:5173`). Jika port terpakai, Vite memilih port lain otomatis.
 
 ## Skrip yang Tersedia
 
-- `npm run dev` — jalankan server development (Vite).
-- `npm run build` — buat bundle produksi (jika diperlukan).
-- `npm run test` — jalankan unit test (Vitest).
-- `npm run coverage` — kumpulkan laporan cakupan test.
+| Skrip              | Fungsi                                            |
+| ------------------ | ------------------------------------------------- |
+| `npm run dev`      | Menjalankan server pengembangan.                  |
+| `npm run build`    | Membuat bundle produksi ke folder `dist/`.        |
+| `npm run preview`  | Pratinjau hasil build di `http://localhost:4173`. |
+| `npm run test`     | Menjalankan unit test (Vitest).                   |
+| `npm run coverage` | Membuat laporan cakupan test.                     |
+| `npm run lint`     | Memeriksa dan memperbaiki gaya kode.              |
 
-## Mengatur/Mengambil Saldo Demo (points)
+## Struktur Proyek
 
-Saldo permainan disimpan di `localStorage` pada kunci `points`. Untuk mengubah atau melihatnya secara manual:
+```
+src/
+├── views/          Halaman utama (Home, Slots, Roulette, Blackjack, Education)
+├── components/     Komponen UI (NavBar, GameCard, InfoComponent, dll.)
+├── router/         Konfigurasi rute (vue-router, hash history)
+├── assets/         CSS global & design system "casino-luxe"
+├── Game.js         Model data permainan
+└── main.js         Titik masuk aplikasi
+public/             Aset statis (logo, favicon, ilustrasi game, audio)
+test/               Unit test
+```
 
-1. Buka DevTools di browser (F12).
-2. Pilih tab `Application` → `Local Storage` → pilih origin (mis. `http://localhost:5173`).
-3. Edit nilai pada kunci `points` (nilai numerik, tanpa pemisah ribuan).
+## Saldo Demo & Penyimpanan
 
-Atau pakai tombol/fitur dalam UI jika tersedia pada versi aplikasi.
+Status sesi disimpan di `localStorage`:
 
-## Catatan Edukatif & Tanggung Jawab
+| Kunci          | Arti                                  |
+| -------------- | ------------------------------------- |
+| `points`       | Saldo demo saat ini (poin palsu).     |
+| `totalWagered` | Akumulasi total yang dipertaruhkan.   |
+| `netResult`    | Hasil bersih sesi (biasanya negatif). |
 
-Proyek ini dibuat untuk tujuan pembelajaran saja. Perjudian nyata membawa risiko keuangan dan sosial. Informasi probabilitas dan EV yang ditampilkan bertujuan untuk edukasi — bukan untuk mendorong perjudian sungguhan. Jika Anda mengalami masalah terkait perjudian, cari bantuan profesional.
+Tombol **Reset** di navbar mengembalikan saldo ke 1.000.000 dan menghapus statistik sesi. Untuk mengubah manual: buka DevTools (`F12`) → `Application` → `Local Storage`.
 
-## Pengembangan & Kontribusi
+## Butuh Bantuan?
 
-- Struktur utama ada di folder `src/`:
-	- `src/views/` — halaman permainan dan tampilan utama
-	- `src/components/` — komponen UI (slot, roulette, dll.)
-	- `src/assets/` — gaya dan aset statis
+Jika Anda atau orang terdekat kesulitan mengendalikan dorongan berjudi:
 
-- Untuk kontribusi: fork repo, buat branch fitur, buat PR dan ikuti pedoman coding/style di repo.
+- 📞 **SEJIWA / Kemenkes:** hubungi **119 ext. 8** (layanan kesehatan jiwa, gratis).
+- 🏥 Konsultasi ke puskesmas atau psikolog terdekat.
+
+Perjudian bukan sumber penghasilan, dan kecanduan judi bisa diobati.
+
+## Kontribusi
+
+Kontribusi dipersilakan. Fork repositori, buat branch fitur, lalu ajukan pull request. Mohon ikuti gaya kode yang ada (ESLint + Prettier dijalankan otomatis oleh Husky).
 
 ## Lisensi
 
-Proyek ini dilisensikan di bawah lisensi pada file `LICENSE` (lihat file tersebut untuk detail).
+Dilisensikan di bawah [GNU General Public License v3.0](./LICENSE).
 
+## Kredit
+
+Dibuat oleh [Wahid Hidayat](https://github.com/whdhdyt21).

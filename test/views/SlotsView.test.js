@@ -21,13 +21,21 @@ describe("mount component, spin with selected value, calculate rewards", async (
   });
 
   test("calculate rewards", async () => {
+    // Reference the component's actual payout constants so this test stays
+    // correct even when payouts are tuned for a different RTP / house edge.
+    const { payout777, payoutTwoSame, payoutTripleDollar } = wrapper.vm;
+
     await wrapper.vm.calculateReward(["7", "7", "7"]);
-    expect(wrapper.emitted().changePoints[1][0]).toBe(selectedBet * 7);
+    expect(wrapper.emitted().changePoints[1][0]).toBe(selectedBet * payout777);
 
     await wrapper.vm.calculateReward(["=", "7", "="]);
-    expect(wrapper.emitted().changePoints[2][0]).toBe(selectedBet * 2);
+    expect(wrapper.emitted().changePoints[2][0]).toBe(
+      selectedBet * payoutTwoSame
+    );
 
     await wrapper.vm.calculateReward(["$", "$", "$"]);
-    expect(wrapper.emitted().changePoints[3][0]).toBe(selectedBet * 5);
+    expect(wrapper.emitted().changePoints[3][0]).toBe(
+      selectedBet * payoutTripleDollar
+    );
   });
 });

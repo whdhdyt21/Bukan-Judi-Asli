@@ -11,33 +11,63 @@ if (localStorage.getItem("points") === null) {
 
 const points = ref(Number(localStorage.getItem("points") || 1000000));
 
+// Session statistics — the core educational signal: how much has been
+// wagered vs. how much has actually been won/lost over the session.
+const totalWagered = ref(Number(localStorage.getItem("totalWagered") || 0));
+const netResult = ref(Number(localStorage.getItem("netResult") || 0));
+
 // keep localStorage in sync whenever points change
 watch(points, (val) => {
   localStorage.setItem("points", String(val));
 });
+watch(totalWagered, (val) => localStorage.setItem("totalWagered", String(val)));
+watch(netResult, (val) => localStorage.setItem("netResult", String(val)));
 
 function changePoints(delta) {
+  const amount = Number(delta);
   // allow positive or negative changes
-  points.value = Number(points.value) + Number(delta);
+  points.value = Number(points.value) + amount;
+  // a negative delta is a bet being placed; a positive delta is a payout
+  if (amount < 0) totalWagered.value += -amount;
+  netResult.value += amount;
+}
+
+function resetSession() {
+  points.value = 1000000;
+  totalWagered.value = 0;
+  netResult.value = 0;
 }
 
 // Games listing (kept in English as requested)
 const base = import.meta.env.BASE_URL || "/";
 const games = [
-  new Game("Slots", base + "slots.jpg", "Putar slot dan menangkan hadiah!"),
-  new Game("Roulette", base + "roulette.jpg", "Putar roda dan menangkan!"),
+  new Game(
+    "Slots",
+    base + "slots.svg",
+    "Lihat bagaimana peluang kecil & pembayaran dipasang agar pemain rugi."
+  ),
+  new Game(
+    "Roulette",
+    base + "roulette.svg",
+    "Pahami kenapa taruhan warna 50/50 tetap merugikan dalam jangka panjang."
+  ),
   new Game(
     "Blackjack",
-    base + "blackjack.jpg",
-    "Kalahkan bandar dan menangkan!"
+    base + "blackjack.svg",
+    "Pelajari house edge meski permainan terasa berbasis keterampilan."
   ),
 ];
 </script>
 
 <template>
-  <NavBar :points="points" />
+  <NavBar
+    :points="points"
+    :totalWagered="totalWagered"
+    :netResult="netResult"
+    @resetSession="resetSession"
+  />
   <RouterView
-    class="h-full pb-10 pt-28"
+    class="pb-10 pt-28 sm:pt-24"
     :games="games"
     @changePoints="changePoints"
     :points="points"

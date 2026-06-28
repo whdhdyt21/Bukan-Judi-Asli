@@ -7,11 +7,15 @@
   margin: 0;
   font-family: "Montserrat", sans-serif;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+}
+
+/* Allow text selection on content for an educational site, but keep
+   interactive controls feeling app-like (no accidental text drag). */
+button,
+select,
+.no-select {
   user-select: none;
+  -webkit-user-select: none;
 }
 
 @font-face {
@@ -25,28 +29,38 @@
   font-weight: bold;
 }
 
+/* --- Casino-luxe base background: deep near-black with gold / violet /
+   rose glows. Fixed so it stays cohesive behind every view. --- */
 html,
 body {
-  background-color: rgb(88, 28, 135);
+  background-color: #070b16;
   background-image: radial-gradient(
-      at 85% 46%,
-      rgb(28, 25, 23) 0,
-      transparent 76%
+      at 82% 0%,
+      rgba(250, 204, 21, 0.12) 0,
+      transparent 50%
     ),
-    radial-gradient(at 29% 61%, rgb(59, 130, 246) 0, transparent 65%),
-    radial-gradient(at 12% 27%, rgb(17, 24, 39) 0, transparent 99%),
-    radial-gradient(at 17% 22%, rgb(55, 65, 81) 0, transparent 50%),
-    radial-gradient(at 35% 73%, rgb(7, 89, 133) 0, transparent 28%),
-    radial-gradient(at 23% 89%, rgb(244, 114, 182) 0, transparent 57%);
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.14) 0, transparent 45%),
+    radial-gradient(at 50% 100%, rgba(225, 29, 72, 0.1) 0, transparent 55%),
+    radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.1) 0, transparent 50%);
+  background-attachment: fixed;
+  color: #e2e8f0;
 }
 
+/* slim gold scrollbar */
 body::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+  height: 8px;
 }
-
-body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(250, 204, 21, 0.5),
+    rgba(245, 158, 11, 0.4)
+  );
+  border-radius: 9999px;
 }
 
 button,
@@ -56,38 +70,159 @@ select {
 
 /* --- Casino / UI utility classes --- */
 
-/* subtle glow for highlights (use on buttons, badges) */
+/* gold glow for highlights (buttons, badges) */
 .glow {
-  box-shadow: 0 6px 18px rgba(250, 204, 21, 0.12), 0 2px 6px rgba(250, 204, 21, 0.06);
+  box-shadow: 0 8px 28px rgba(250, 204, 21, 0.28),
+    0 2px 10px rgba(250, 204, 21, 0.18);
 }
 
-/* stronger neon accent for headings or focused elements */
+/* neon accent for headings or focused elements */
 .neon {
-  text-shadow: 0 2px 10px rgba(250, 204, 21, 0.12), 0 0 6px rgba(250, 204, 21, 0.08);
+  text-shadow: 0 2px 14px rgba(250, 204, 21, 0.35),
+    0 0 8px rgba(250, 204, 21, 0.25);
 }
 
-/* glass card look */
+/* animated gold "jackpot" gradient text */
+.jackpot-text {
+  background: linear-gradient(90deg, #fde68a, #f59e0b, #fbbf24, #fde68a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shine 4s linear infinite;
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* gold-tinted glass card */
 .glass {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(250, 204, 21, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 12px 32px rgba(2, 6, 23, 0.45);
+  border-radius: 1rem;
 }
 
-/* subtle floating/hover lift for cards */
+/* gentle hover feedback for interactive cards: a soft border/shadow,
+   no movement or scaling (kept subtle so it never feels distracting) */
 .card-hover {
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition: box-shadow 200ms ease, border-color 200ms ease;
 }
 .card-hover:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 20px 40px rgba(2,6,23,0.55);
+  border-color: rgba(250, 204, 21, 0.28);
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.5);
+}
+
+/* coin/chip pill */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(
+    135deg,
+    rgba(250, 204, 21, 0.2),
+    rgba(245, 158, 11, 0.08)
+  );
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  border-radius: 9999px;
+  padding: 0.35rem 0.8rem;
+}
+
+/* pulsing glow ring for the primary call-to-action */
+.pulse-glow {
+  animation: pulseGlow 2.2s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.45),
+      0 10px 30px rgba(250, 204, 21, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(250, 204, 21, 0),
+      0 10px 30px rgba(250, 204, 21, 0.35);
+  }
+}
+
+/* --- Casino-style primary button: gold gradient with an animated sheen.
+   Overrides daisyUI's .btn-primary so every CTA (Putar, Main, ...) matches. --- */
+.btn-primary {
+  background-image: linear-gradient(135deg, #ffd54a 0%, #f59e0b 100%);
+  border: none;
+  color: #1a1300;
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background-image: linear-gradient(135deg, #ffdf6b 0%, #f7a91a 100%);
+  filter: brightness(1.03);
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: sheen 3.6s infinite;
+  pointer-events: none;
+}
+.btn-primary:disabled::after {
+  animation: none;
+}
+@keyframes sheen {
+  0% {
+    left: -150%;
+  }
+  55%,
+  100% {
+    left: 160%;
+  }
+}
+
+/* running "promo ticker" — used to scroll educational warnings */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee > span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 22s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* small badge style */
 .badge-soft {
   padding: 0.15rem 0.5rem;
   border-radius: 9999px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
   color: #fff;
   font-weight: 600;
   font-size: 0.7rem;
@@ -110,18 +245,35 @@ select {
 
 /* utility for lazy image placeholder */
 .img-placeholder {
-  background: linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 50%, rgba(255,255,255,0.02) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.01) 50%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
 }
 
 /* simple fade transition used by rules toggle */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 220ms ease, transform 220ms ease;
 }
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
   transform: translateY(6px);
 }
-.fade-enter-to, .fade-leave-from {
+.fade-enter-to,
+.fade-leave-from {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jackpot-text,
+  .btn-primary::after,
+  .pulse-glow,
+  .marquee > span {
+    animation: none !important;
+  }
 }

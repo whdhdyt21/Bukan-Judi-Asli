@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="Ilustrasi edukatif kartu blackjack">
+  <defs>
+    <linearGradient id="bgBj" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1222"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="220" fill="url(#bgBj)"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="200" y="40" text-anchor="middle" font-size="22" font-weight="800" fill="#e2e8f0">BLACKJACK</text>
+    <!-- two cards -->
+    <g transform="translate(150 70) rotate(-8)">
+      <rect width="70" height="96" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="14" y="30" font-size="22" font-weight="700" fill="#0f172a">A</text>
+      <text x="35" y="62" text-anchor="middle" font-size="28" fill="#0f172a">♠</text>
+    </g>
+    <g transform="translate(200 66) rotate(8)">
+      <rect width="70" height="96" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="14" y="30" font-size="22" font-weight="700" fill="#b91c1c">K</text>
+      <text x="35" y="62" text-anchor="middle" font-size="28" fill="#b91c1c">♥</text>
+    </g>
+    <!-- house edge tag -->
+    <g>
+      <rect x="135" y="186" width="130" height="24" rx="12" fill="#9f1239" opacity="0.85"/>
+      <text x="200" y="203" text-anchor="middle" font-size="13" font-weight="700" fill="#fecdd3">House edge ≈ 5%</text>
+    </g>
+  </g>
+</svg>
