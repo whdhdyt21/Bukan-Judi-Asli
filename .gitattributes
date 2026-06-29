@@ -1,0 +1,5 @@
+# Force LF on shell scripts and husky hooks. With core.autocrlf=true (common on
+# Windows) git would otherwise rewrite them to CRLF on checkout, corrupting the
+# shebang line so git "cannot spawn" the hook.
+*.sh text eol=lf
+.husky/* text eol=lf

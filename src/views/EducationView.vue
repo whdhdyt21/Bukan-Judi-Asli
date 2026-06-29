@@ -32,12 +32,12 @@ export default {
 
 <template>
   <main
-    class="flex flex-col items-center w-full min-h-screen py-12 text-slate-200"
+    class="flex flex-col items-center w-full min-h-screen py-8 text-slate-200"
   >
-    <div class="w-11/12 sm:w-3/4 lg:w-3/5 flex flex-col gap-8">
+    <div class="w-11/12 sm:w-3/4 lg:w-3/5 flex flex-col gap-6">
       <!-- Header -->
       <header class="text-center">
-        <h1 class="text-4xl font-extrabold text-white neon">
+        <h1 class="text-3xl font-extrabold text-white neon">
           Pelajari Risiko Perjudian
         </h1>
         <p class="mt-3 text-slate-300">
@@ -49,8 +49,8 @@ export default {
       </header>
 
       <!-- House edge cards -->
-      <section class="glass p-6 rounded-2xl">
-        <h2 class="text-2xl font-bold text-white">
+      <section class="glass p-5 rounded-2xl">
+        <h2 class="text-xl font-bold text-white">
           1. House Edge: Keunggulan Rumah
         </h2>
         <p class="mt-2 text-sm text-slate-300">
@@ -92,8 +92,8 @@ export default {
       </section>
 
       <!-- EV explanation -->
-      <section class="glass p-6 rounded-2xl">
-        <h2 class="text-2xl font-bold text-white">
+      <section class="glass p-5 rounded-2xl">
+        <h2 class="text-xl font-bold text-white">
           2. Expected Value (EV): Nilai Harapan
         </h2>
         <p class="mt-2 text-sm text-slate-300">
@@ -118,8 +118,8 @@ export default {
       </section>
 
       <!-- Simulator -->
-      <section class="glass p-6 rounded-2xl">
-        <h2 class="text-2xl font-bold text-white">
+      <section class="glass p-5 rounded-2xl">
+        <h2 class="text-xl font-bold text-white">
           3. Berapa Lama Saldo Bertahan?
         </h2>
         <p class="mt-2 text-sm text-slate-300">
@@ -168,8 +168,8 @@ export default {
       </section>
 
       <!-- Cognitive traps -->
-      <section class="glass p-6 rounded-2xl">
-        <h2 class="text-2xl font-bold text-white">4. Jebakan Pikiran</h2>
+      <section class="glass p-5 rounded-2xl">
+        <h2 class="text-xl font-bold text-white">4. Jebakan Pikiran</h2>
         <ul class="mt-3 space-y-3 text-sm text-slate-300">
           <li>
             <strong class="text-white">Gambler's Fallacy:</strong> "Sudah kalah
@@ -191,7 +191,7 @@ export default {
 
       <!-- Help -->
       <section class="glass p-6 rounded-2xl border border-emerald-500/30">
-        <h2 class="text-2xl font-bold text-white">5. Butuh Bantuan?</h2>
+        <h2 class="text-xl font-bold text-white">5. Butuh Bantuan?</h2>
         <p class="mt-2 text-sm text-slate-300">
           Jika Anda atau orang terdekat kesulitan mengendalikan dorongan
           berjudi, itu bisa diobati dan Anda tidak sendirian.

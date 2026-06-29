@@ -19,7 +19,7 @@ export default {
 
 <template>
   <main
-    class="flex flex-col gap-12 w-full min-h-screen items-center justify-start pb-16"
+    class="flex flex-col gap-8 w-full min-h-screen items-center justify-start pb-12"
   >
     <!-- "Promo" ticker — the running-text pattern of gambling sites, repurposed for warnings -->
     <div
@@ -35,7 +35,7 @@ export default {
     </div>
 
     <!-- Hero -->
-    <section class="w-11/12 sm:w-3/4 lg:w-2/3 glass p-8 sm:p-10">
+    <section class="w-11/12 sm:w-3/4 lg:w-2/3 glass p-6 sm:p-8">
       <div class="flex flex-col md:flex-row items-center gap-8">
         <div class="flex-1 text-center md:text-left">
           <span
@@ -47,23 +47,21 @@ export default {
             Platform Edukasi
           </span>
           <h1
-            class="mt-4 text-5xl sm:text-6xl font-extrabold tracking-tight jackpot-text leading-none"
+            class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight jackpot-text leading-none"
           >
             Sadar Judi
           </h1>
-          <p class="mt-4 text-lg font-semibold text-slate-100">
+          <p class="mt-3 text-base font-semibold text-slate-100">
             Kenali matematika & risiko perjudian lewat simulasi.
           </p>
-          <p
-            class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl"
-          >
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed max-w-2xl">
             Coba simulasinya, lalu lihat sendiri
             <strong class="text-amber-200">mengapa "rumah" selalu menang</strong
             >. Tidak ada uang, taruhan, atau hadiah nyata, hanya pelajaran yang
             bisa menyelamatkan dompet (dan hidup) Anda.
           </p>
           <div
-            class="mt-6 flex flex-wrap items-center gap-3 justify-center md:justify-start"
+            class="mt-4 flex flex-wrap items-center gap-3 justify-center md:justify-start"
           >
             <RouterLink
               to="/edukasi"
@@ -88,7 +86,7 @@ export default {
         </div>
 
         <!-- decorative balance card -->
-        <div class="w-full md:w-72 flex-shrink-0">
+        <div class="w-full md:w-60 flex-shrink-0">
           <div
             class="relative rounded-2xl p-5 bg-gradient-to-b from-[#141a2e] to-[#0a0e1a] shadow-2xl border border-amber-400/20 overflow-hidden"
           >
@@ -104,7 +102,7 @@ export default {
                 >DEMO</span
               >
             </div>
-            <div class="text-3xl font-black jackpot-text relative">
+            <div class="text-2xl font-black jackpot-text relative">
               1.000.000
             </div>
             <div class="flex items-center justify-center h-16 mt-2 relative">
@@ -151,7 +149,7 @@ export default {
     <!-- Games grid -->
     <section id="games" class="w-11/12 sm:w-10/12">
       <div class="flex items-end justify-between mb-5">
-        <h2 class="text-2xl sm:text-3xl text-white font-extrabold">
+        <h2 class="text-xl sm:text-2xl text-white font-extrabold">
           Coba <span class="jackpot-text">Simulasi</span>
         </h2>
         <div class="text-sm text-slate-400">

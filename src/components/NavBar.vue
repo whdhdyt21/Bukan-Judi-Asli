@@ -23,7 +23,7 @@ export default {
           alt="Logo Sadar Judi"
           class="w-9 h-9 drop-shadow-[0_0_8px_rgba(250,204,21,0.4)]"
         />
-        <span class="font-extrabold text-2xl tracking-tight jackpot-text"
+        <span class="font-extrabold text-xl tracking-tight jackpot-text"
           >Sadar Judi</span
         >
       </RouterLink>
@@ -77,7 +77,7 @@ export default {
           class="flex items-center justify-center w-6 h-6 rounded-full text-[13px] font-black text-amber-900 bg-gradient-to-br from-yellow-300 to-amber-500 shadow-inner"
           >₽</span
         >
-        <span class="text-lg font-bold text-amber-100 font-mono">{{
+        <span class="text-base font-bold text-amber-100 font-mono">{{
           points.toLocaleString("fi-FI")
         }}</span>
       </div>

@@ -268,14 +268,14 @@ export default {
     <section class="w-11/12 sm:w-4/5 lg:w-3/4 max-w-6xl">
       <header class="w-full flex items-center justify-between mb-4">
         <div>
-          <h1 class="text-3xl font-extrabold neon">Blackjack</h1>
+          <h1 class="text-2xl font-extrabold neon">Blackjack</h1>
           <p class="text-sm text-rose-300">
             Simulasi edukasi, bukan untuk uang nyata. Perjudian dapat merugikan.
           </p>
         </div>
         <div class="glass px-4 py-2 rounded-md text-sm">
           <div class="text-xs text-slate-300">Saldo</div>
-          <div class="font-bold text-lg">{{ points.toLocaleString() }}</div>
+          <div class="font-bold text-base">{{ points.toLocaleString() }}</div>
         </div>
       </header>
       <!-- Back button removed; navigation is provided by the global NavBar -->
@@ -539,19 +539,5 @@ summary::-webkit-details-marker {
 }
 summary {
   padding: 0.25rem 0.5rem;
-}
-
-/* back button styling */
-.back-btn {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.01)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  color: #fff;
-}
-.back-btn:hover {
-  background: rgba(255, 255, 255, 0.03);
 }
 </style>

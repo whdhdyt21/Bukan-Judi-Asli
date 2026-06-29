@@ -1,4 +1,12 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged
+# GUI git clients (GitHub Desktop, Sourcetree) on Windows run hooks with a
+# stripped PATH that often omits Node.js. Ensure `node` is resolvable.
+command -v node >/dev/null 2>&1 || export PATH="/c/Program Files/nodejs:$PATH"
+
+# Call lint-staged via `node` directly instead of `npx`. On Windows the `npx`
+# shell script in Program Files\nodejs can't be executed by some bundled bash
+# environments (GitHub Desktop) - it fails with "No such file or directory".
+# node.exe is a real binary and always runs, sidestepping this.
+node "$(dirname -- "$0")/../node_modules/lint-staged/bin/lint-staged.js"

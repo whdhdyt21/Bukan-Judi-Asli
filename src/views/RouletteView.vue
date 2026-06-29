@@ -129,14 +129,14 @@ export default {
     >
       <header class="w-full flex items-center justify-between">
         <div>
-          <h1 class="text-3xl font-extrabold neon">Roulette</h1>
+          <h1 class="text-2xl font-extrabold neon">Roulette</h1>
           <p class="text-sm text-slate-300">
             Putar roda, pilih warna, menangkan poin!
           </p>
         </div>
         <div class="glass px-4 py-2 rounded-md text-sm">
           <div class="text-xs text-slate-300">Saldo</div>
-          <div class="font-bold text-lg">{{ points.toLocaleString() }}</div>
+          <div class="font-bold text-base">{{ points.toLocaleString() }}</div>
         </div>
       </header>
 
