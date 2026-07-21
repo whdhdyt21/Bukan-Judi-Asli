@@ -2,7 +2,7 @@
   <img height="72" src="./public/logo.svg" alt="Logo Sadar Judi">
 </p>
 
-<h1 align="center">Sadar Judi</h1>
+<h1 align="center">Simulasi Risiko</h1>
 
 <p align="center">
   Simulasi edukatif untuk memahami matematika dan risiko di balik perjudian online.
@@ -18,11 +18,11 @@
 
 ---
 
-> [!WARNING] > **Ini bukan situs judi.** Tidak ada uang, taruhan, atau hadiah nyata. Semua saldo bersifat simulasi (poin palsu) yang tidak dapat ditarik atau diuangkan. Tujuannya murni edukasi.
+> [!WARNING] > Tidak ada uang, taruhan, atau hadiah nyata. Semua saldo bersifat simulasi (poin palsu) yang tidak dapat ditarik atau diuangkan. Tujuannya murni edukasi.
 
 ## Tentang Proyek
 
-**Sadar Judi** sengaja meniru tampilan kasino/slot online modern untuk satu alasan: menunjukkan **mengapa pemain selalu kalah dalam jangka panjang**. Alih-alih sekadar memberi nasihat "jangan berjudi", proyek ini membiarkan pengguna mencoba sendiri simulasinya, lalu membuka tabir matematika dan trik psikologis yang membuat perjudian selalu menguntungkan bandar.
+**Simulasi Risiko** sengaja meniru tampilan kasino/slot online modern untuk satu alasan: menunjukkan **mengapa pemain selalu kalah dalam jangka panjang**. Alih-alih sekadar memberi nasihat "jangan berjudi", proyek ini membiarkan pengguna mencoba sendiri simulasinya, lalu membuka tabir matematika dan trik psikologis yang membuat perjudian selalu menguntungkan bandar.
 
 Bahkan estetika "mewah" situs ini (emas berkilau, tombol berdenyut, running text promo) adalah bagian dari pelajaran: itulah pola nyata yang dipakai situs judi untuk memikat. Di sini pengguna belajar mengenalinya.
 
